@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
               className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl"
             >
               Passionate about building intelligent systems and creating impactful solutions. 
-              Currently scaling ML models at Hinge-Health and leading tech communities.
+              Currently seeking opportunities.
             </motion.p>
 
             {/* CTA Buttons */}
