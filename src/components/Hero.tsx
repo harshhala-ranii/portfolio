@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
             >
               <span className="gradient-text">Harshala</span>
               <br />
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="h-8 md:h-12"
+              className="h-8 sm:h-10 md:h-12"
             >
               <motion.p
                 key={currentText}
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-xl md:text-3xl font-semibold text-gray-300"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-300"
               >
                 {texts[currentText]}
               </motion.p>
@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-lg text-gray-400 leading-relaxed"
+              className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl"
             >
               Passionate about building intelligent systems and creating impactful solutions. 
               Currently scaling ML models at Hinge-Health and leading tech communities.
@@ -104,9 +104,9 @@ const Hero: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full flex items-center space-x-2 hover:shadow-lg transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Download Resume</span>
               </motion.button>
               
@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToAbout}
-                className="px-8 py-4 border-2 border-primary-500 text-primary-400 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary-500 text-primary-400 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 text-sm sm:text-base"
               >
                 Learn More
               </motion.button>
@@ -173,7 +173,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="relative"
               >
-                                 <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-2xl">
+                                 <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-2xl">
                    <img
                      src="/profile-image.jpg"
                      alt="Harshala Rani - Full Stack Developer & ML Engineer"

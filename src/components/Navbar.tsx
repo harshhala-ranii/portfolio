@@ -116,23 +116,23 @@ const Navbar: React.FC = () => {
             height: isOpen ? 'auto' : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden glass-effect rounded-lg mt-2"
         >
-          <div className="py-4 space-y-4">
+          <div className="py-6 px-4 space-y-4">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ x: 10 }}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-gray-300 hover:text-primary-400 transition-colors font-medium"
+                className="block w-full text-left text-gray-300 hover:text-primary-400 transition-colors font-medium py-2 px-3 rounded-lg hover:bg-white/5"
               >
                 {item.name}
               </motion.button>
             ))}
-            <div className="flex space-x-4 pt-4">
+            <div className="flex space-x-6 pt-6 border-t border-white/10">
               <a
                 href="mailto:harshalarani3@gmail.com"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
                 href="https://github.com/harshhala-ranii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
                 href="https://www.linkedin.com/in/harshala-rani-a26880244/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
               >
                 <Linkedin className="w-5 h-5" />
               </a>

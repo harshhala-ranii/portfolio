@@ -54,11 +54,11 @@ const Experience: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative px-4 sm:px-0">
           {/* Timeline Line */}
           <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-secondary-500"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((experience, index) => {
               const Icon = experience.icon;
               const isEven = index % 2 === 0;
@@ -81,7 +81,7 @@ const Experience: React.FC = () => {
                   <div className={`flex-1 ${isEven ? 'md:pr-8' : 'md:pl-8'} mt-8 md:mt-0`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="glass-effect rounded-2xl p-8 card-hover"
+                      className="glass-effect rounded-2xl p-6 sm:p-8 card-hover"
                     >
                       {/* Header */}
                       <div className="flex items-start justify-between mb-6">

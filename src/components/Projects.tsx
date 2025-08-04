@@ -67,7 +67,7 @@ const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {projects.map((project, index) => {
             const Icon = project.icon;
             
@@ -84,7 +84,7 @@ const Projects: React.FC = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="glass-effect rounded-2xl p-8 h-full card-hover"
+                  className="glass-effect rounded-2xl p-6 sm:p-8 h-full card-hover"
                 >
                   {/* Project Header */}
                   <div className="flex items-start justify-between mb-6">
