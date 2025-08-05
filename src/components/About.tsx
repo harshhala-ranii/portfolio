@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
+import { GraduationCap, MapPin, Calendar, Award, Download } from 'lucide-react';
 
 const About: React.FC = () => {
   const education = {
@@ -17,6 +17,17 @@ const About: React.FC = () => {
     'Specialized in Computer Vision, Machine Learning, and Full Stack Development',
     'Committed to making technology accessible and inclusive',
   ];
+
+  const handleDownloadResume = () => {
+    // Create a link element to trigger the download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // This should point to your resume file in the public folder
+    link.download = 'resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="about" className="section-padding">
@@ -89,6 +100,23 @@ const About: React.FC = () => {
                   <p className="text-gray-300 leading-relaxed">{highlight}</p>
                 </motion.div>
               ))}
+              
+              {/* Download Resume Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="pt-6"
+              >
+                <button
+                  onClick={handleDownloadResume}
+                  className="group inline-flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                >
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
+                  <span>Download Resume</span>
+                </button>
+              </motion.div>
             </div>
           </motion.div>
 
