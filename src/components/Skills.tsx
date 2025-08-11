@@ -81,12 +81,12 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="mobile-heading font-bold mb-4">
             Technical <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="mobile-text text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
             A comprehensive toolkit of technologies and frameworks I use to build amazing solutions
           </p>
         </motion.div>
@@ -107,13 +107,13 @@ const Skills: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                className={`flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 text-sm sm:text-base touch-target ${
                   activeCategory === category.id
                     ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
                     : 'glass-effect text-gray-300 hover:text-primary-400'
                 }`}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="font-medium">{category.name}</span>
               </motion.button>
             );
@@ -126,7 +126,7 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0"
+          className="grid mobile-grid gap-4 sm:gap-6 px-4 sm:px-0"
         >
           {getFilteredSkills().map((skill, index) => (
             <motion.div
@@ -135,14 +135,14 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-xl p-6 card-hover"
+              className="glass-effect rounded-xl mobile-card card-hover"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-                <span className="text-sm text-gray-400">{skill.level}%</span>
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold text-white">{skill.name}</h3>
+                <span className="text-xs sm:text-sm text-gray-400">{skill.level}%</span>
               </div>
               
-              <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
+              <div className="w-full bg-gray-700 rounded-full h-2 mb-3 sm:mb-4">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
@@ -153,8 +153,8 @@ const Skills: React.FC = () => {
               </div>
               
               <div className="flex items-center space-x-2">
-                <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${skill.color}`}></div>
-                <span className="text-sm text-gray-400">
+                <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-r ${skill.color}`}></div>
+                <span className="text-xs sm:text-sm text-gray-400">
                   {skill.level >= 90 ? 'Expert' : 
                    skill.level >= 80 ? 'Advanced' : 
                    skill.level >= 70 ? 'Intermediate' : 'Beginner'}
@@ -170,13 +170,13 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
         >
-          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="glass-effect rounded-2xl mobile-card max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               Why These Skills Matter
             </h3>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
               My diverse skill set allows me to build end-to-end solutions from concept to deployment. 
               From machine learning models to responsive web applications, I can handle every aspect of 
               modern software development. This versatility enables me to create innovative solutions 

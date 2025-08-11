@@ -54,12 +54,12 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="mobile-heading font-bold mb-4">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="mobile-text text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
             Ready to collaborate on amazing projects? Let's discuss how we can work together to create something extraordinary.
           </p>
         </motion.div>
@@ -71,17 +71,17 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h3>
+              <p className="text-gray-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                 I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.
               </p>
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
@@ -92,14 +92,14 @@ const Contact: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center space-x-4 p-4 glass-effect rounded-xl hover:bg-primary-500/10 transition-all duration-300"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 glass-effect rounded-xl hover:bg-primary-500/10 transition-all duration-300 touch-target"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">{info.label}</p>
-                      <p className="text-white font-semibold">{info.value}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">{info.label}</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">{info.value}</p>
                     </div>
                   </motion.a>
                 );
@@ -108,8 +108,8 @@ const Contact: React.FC = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-xl font-bold text-white mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Follow Me</h4>
+              <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -124,9 +124,9 @@ const Contact: React.FC = () => {
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`w-12 h-12 glass-effect rounded-full flex items-center justify-center text-gray-400 transition-all duration-300 ${social.color}`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 glass-effect rounded-full flex items-center justify-center text-gray-400 transition-all duration-300 ${social.color} touch-target`}
                     >
-                      <Icon className="w-6 h-6" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </motion.a>
                   );
                 })}
@@ -139,13 +139,13 @@ const Contact: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="glass-effect rounded-xl p-6"
+              className="glass-effect rounded-xl mobile-card"
             >
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-400 font-semibold">Available for Opportunities</span>
+              <div className="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-green-400 font-semibold text-sm sm:text-base">Available for Opportunities</span>
               </div>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-xs sm:text-sm">
                 I'm currently open to new opportunities and collaborations. Let's discuss how we can work together!
               </p>
             </motion.div>
@@ -158,13 +158,13 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
-          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="glass-effect rounded-2xl mobile-card max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               Ready to Start Something Amazing?
             </h3>
-            <p className="text-gray-300 leading-relaxed mb-6">
+            <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               Whether you have a project in mind, want to discuss opportunities, or just want to connect, 
               I'd love to hear from you. Let's create something incredible together!
             </p>
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 border-2 border-primary-500 text-primary-400 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300"
+              className="mobile-button border-2 border-primary-500 text-primary-400 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 touch-target"
             >
               Let's Talk
             </motion.button>

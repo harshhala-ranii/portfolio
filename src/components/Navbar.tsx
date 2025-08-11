@@ -41,25 +41,25 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container-custom px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <Code className="w-8 h-8 text-primary-500" />
-            <span className="text-xl font-bold gradient-text">Harshala</span>
+            <Code className="w-6 h-6 sm:w-8 sm:h-8 text-primary-500" />
+            <span className="text-lg sm:text-xl font-bold gradient-text">Harshala</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-primary-400 transition-colors font-medium"
+                className="text-gray-300 hover:text-primary-400 transition-colors font-medium text-sm lg:text-base touch-target"
               >
                 {item.name}
               </motion.button>
@@ -67,14 +67,14 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               href="mailto:harshalarani3@gmail.com"
-              className="text-gray-400 hover:text-primary-400 transition-colors"
+              className="text-gray-400 hover:text-primary-400 transition-colors touch-target"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4 lg:w-5 lg:h-5" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
@@ -82,9 +82,9 @@ const Navbar: React.FC = () => {
               href="https://github.com/harshhala-ranii"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary-400 transition-colors"
+              className="text-gray-400 hover:text-primary-400 transition-colors touch-target"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 lg:w-5 lg:h-5" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
@@ -92,9 +92,9 @@ const Navbar: React.FC = () => {
               href="https://www.linkedin.com/in/harshala-rani-a26880244/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary-400 transition-colors"
+              className="text-gray-400 hover:text-primary-400 transition-colors touch-target"
             >
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 lg:w-5 lg:h-5" />
             </motion.a>
           </div>
 
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-300 hover:text-primary-400 transition-colors"
+            className="md:hidden text-gray-300 hover:text-primary-400 transition-colors touch-target"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -118,21 +118,21 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden glass-effect rounded-lg mt-2"
         >
-          <div className="py-6 px-4 space-y-4">
+          <div className="py-4 sm:py-6 px-4 space-y-2 sm:space-y-4">
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ x: 10 }}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-gray-300 hover:text-primary-400 transition-colors font-medium py-2 px-3 rounded-lg hover:bg-white/5"
+                className="mobile-nav-item block w-full text-left text-gray-300 hover:text-primary-400 transition-colors rounded-lg hover:bg-white/5 touch-target"
               >
                 {item.name}
               </motion.button>
             ))}
-            <div className="flex space-x-6 pt-6 border-t border-white/10">
+            <div className="flex justify-center space-x-6 pt-4 sm:pt-6 border-t border-white/10">
               <a
                 href="mailto:harshalarani3@gmail.com"
-                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5 touch-target"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
                 href="https://github.com/harshhala-ranii"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5 touch-target"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
                 href="https://www.linkedin.com/in/harshala-rani-a26880244/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+                className="text-gray-400 hover:text-primary-400 transition-colors p-2 rounded-lg hover:bg-white/5 touch-target"
               >
                 <Linkedin className="w-5 h-5" />
               </a>

@@ -57,12 +57,12 @@ const Projects: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="mobile-heading font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="mobile-text text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
             Innovative solutions that showcase my technical skills and passion for creating impactful applications
           </p>
         </motion.div>
@@ -84,32 +84,32 @@ const Projects: React.FC = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="glass-effect rounded-2xl p-6 sm:p-8 h-full card-hover"
+                  className="glass-effect rounded-2xl mobile-card h-full card-hover"
                 >
                   {/* Project Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-full flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 text-white" />
+                  <div className="flex items-start justify-between mb-4 sm:mb-6">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${project.color} rounded-full flex items-center justify-center`}>
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                        <p className="text-gray-400 text-sm">Full Stack Project</p>
+                        <h3 className="text-lg sm:text-xl font-bold text-white">{project.title}</h3>
+                        <p className="text-gray-400 text-xs sm:text-sm">Full Stack Project</p>
                       </div>
                     </div>
-                                         <div className="flex space-x-2">
-                       {project.github && (
-                         <motion.a
-                           whileHover={{ scale: 1.1 }}
-                           whileTap={{ scale: 0.9 }}
-                           href={project.github}
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="text-gray-400 hover:text-primary-400 transition-colors"
-                         >
-                           <Github className="w-5 h-5" />
-                         </motion.a>
-                       )}
+                    <div className="flex space-x-2">
+                      {project.github && (
+                        <motion.a
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-primary-400 transition-colors touch-target"
+                        >
+                          <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </motion.a>
+                      )}
                       {project.live && (
                         <motion.a
                           whileHover={{ scale: 1.1 }}
@@ -117,21 +117,21 @@ const Projects: React.FC = () => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-400 hover:text-primary-400 transition-colors"
+                          className="text-gray-400 hover:text-primary-400 transition-colors touch-target"
                         >
-                          <ExternalLink className="w-5 h-5" />
+                          <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                         </motion.a>
                       )}
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                     {project.description}
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {project.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
@@ -139,16 +139,16 @@ const Projects: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="flex items-start space-x-3"
+                        className="flex items-start space-x-2 sm:space-x-3"
                       >
                         <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-300 text-sm">{feature}</p>
+                        <p className="text-gray-300 text-xs sm:text-sm">{feature}</p>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={techIndex}
@@ -156,7 +156,7 @@ const Projects: React.FC = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: techIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="px-3 py-1 bg-primary-500/20 text-primary-400 rounded-full text-sm font-medium border border-primary-500/30"
+                        className="px-2 sm:px-3 py-1 bg-primary-500/20 text-primary-400 rounded-full text-xs sm:text-sm font-medium border border-primary-500/30"
                       >
                         {tech}
                       </motion.span>
@@ -164,12 +164,12 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Impact */}
-                  <div className="bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-lg p-4 border border-primary-500/20">
+                  <div className="bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-lg p-3 sm:p-4 border border-primary-500/20">
                     <div className="flex items-center space-x-2 mb-2">
-                      <TrendingUp className="w-4 h-4 text-primary-400" />
-                      <span className="text-primary-400 font-semibold text-sm">Impact</span>
+                      <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-primary-400" />
+                      <span className="text-primary-400 font-semibold text-xs sm:text-sm">Impact</span>
                     </div>
-                    <p className="text-gray-300 text-sm">{project.impact}</p>
+                    <p className="text-gray-300 text-xs sm:text-sm">{project.impact}</p>
                   </div>
                 </motion.div>
 
@@ -184,44 +184,44 @@ const Projects: React.FC = () => {
           })}
         </div>
 
-                 {/* Academic Collaboration Showcase */}
-         <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8, delay: 0.3 }}
-           viewport={{ once: true }}
-           className="mb-16"
-         >
-           <div className="glass-effect rounded-2xl overflow-hidden card-hover max-w-4xl mx-auto">
-             <div className="relative">
-               <img
-                 src="/academic-collaboration.jpeg"
-                 alt="Academic collaboration and teamwork at BMS College of Engineering - Computer Science Department"
-                 className="w-full h-[500px] object-cover"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-               <div className="absolute bottom-8 left-8 right-8">
-                 <h3 className="text-2xl font-bold text-white mb-3">Academic Excellence & Collaboration</h3>
-                 <p className="text-gray-200 text-lg mb-4">
-                   Working with peers and faculty at BMS College of Engineering's Computer Science Department
-                 </p>
-                 <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-                   <div className="flex items-center space-x-2">
-                     <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                     <span>Team Collaboration</span>
-                   </div>
-                   <div className="flex items-center space-x-2">
-                     <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                     <span>Academic Projects</span>
-                   </div>
-                   <div className="flex items-center space-x-2">
-                     <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                     <span>Professional Development</span>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+        {/* Academic Collaboration Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mb-12 sm:mb-16"
+        >
+          <div className="glass-effect rounded-2xl overflow-hidden card-hover max-w-4xl mx-auto">
+            <div className="relative">
+              <img
+                src="/academic-collaboration.jpeg"
+                alt="Academic collaboration and teamwork at BMS College of Engineering - Computer Science Department"
+                className="w-full h-64 sm:h-80 md:h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Academic Excellence & Collaboration</h3>
+                <p className="text-gray-200 text-sm sm:text-lg mb-3 sm:mb-4">
+                  Working with peers and faculty at BMS College of Engineering's Computer Science Department
+                </p>
+                <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-gray-300">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                    <span>Team Collaboration</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                    <span>Academic Projects</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                    <span>Professional Development</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Projects Summary */}
@@ -232,18 +232,18 @@ const Projects: React.FC = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="glass-effect rounded-2xl mobile-card max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               My Development Philosophy
             </h3>
-            <p className="text-gray-300 leading-relaxed mb-6">
+            <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               I believe in building solutions that not only solve technical challenges but also create meaningful impact. 
               Each project represents a unique blend of innovation, user-centric design, and scalable architecture.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
+              className="mobile-button bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 touch-target"
             >
               View All Projects
             </motion.button>
