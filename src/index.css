@@ -21,6 +21,20 @@
     max-width: 100vw; /* prevent iOS Safari lateral bounce showing white */
     overflow-x: hidden; /* prevent horizontal scroll on mobile */
     background-color: #0f172a; /* fallback background */
+    color: #e2e8f0; /* default text color: slate-200 (avoid black) */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc; /* near-white for headings */
+  }
+
+  a {
+    color: #7dd3fc; /* primary-300 */
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #38bdf8; /* primary-400 */
   }
 
   #root {
